@@ -48,7 +48,7 @@ checkActiveSlide()
 
 for(let i = 0 ; i < sliderButtonArray.length ; i++){
     sliderButtonArray[i].addEventListener('click', () => {
-        const xIndex = - (Number(i + "00") / 5);
+        const xIndex = - (Number(i + "00") / 6);
         console.log(xIndex)
         slider.style.transform = `translateX(${xIndex}%)`;
         activeSlide = i;

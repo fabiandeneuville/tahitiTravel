@@ -94,6 +94,8 @@ main {
 .welcome-message-text  {
     color:  rgb(241, 233, 212);
     margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 25px;
 }
 
 .welcome-message-button {
@@ -144,20 +146,53 @@ main {
 
 .form-slide-heading {
     color: rgb(241, 233, 212);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 15px;
+    display:block;
     opacity: 0;
     transition: all 0.8s ease;
 }
 
 .form-slider {
-    width: 500%;
+    width: 600%;
     display: flex;
     flex-direction: row;
     transition: all 0.5s ease;
 }
+
 .form-slide {
     width: 100%;
 }
 
+.form-slide-intro {
+    color: rgb(241, 233, 212);
+    margin: 15px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 15px;
+    line-height: 25px;
+}
+
+.input-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+label {
+    color: rgb(241, 233, 212);
+}
+
+input {
+    width: 50px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid rgb(124,252,0);
+    color: rgb(241, 233, 212);
+    padding-left: 10px;
+}
 
 /* MAIN STYLE END */
 

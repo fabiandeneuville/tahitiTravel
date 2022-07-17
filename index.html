@@ -47,6 +47,7 @@
             <!--WELCOME MESSAGE END-->
             <!--FORM START-->
             <form class="form">
+                <!--FORM BUTTONS CONTAINER START-->
                 <div class="form-btn-container">
                     <div class="slider-button">
                         <i class="fa-solid fa-people-group"></i>
@@ -55,7 +56,7 @@
                         <i class="fa-solid fa-bed"></i>
                     </div>
                     <div class="slider-button">
-                        <i class="fa-solid fa-cart-flatbed-suitcase"></i>
+                        <i class="fa-solid fa-train"></i>
                     </div>
                     <div class="slider-button">
                         <i class="fa-solid fa-utensils"></i>
@@ -63,16 +64,30 @@
                     <div class="slider-button">
                         <i class="fa-solid fa-person-biking"></i>
                     </div>
+                    <div class="slider-button">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
                 </div>
+                <!--FORM BUTTONS CONTAINER END-->
+                <!--FORM SLIDER START-->
                 <div class="form-slider">
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Les voyageurs</h2>
+                        <p class="form-slide-intro">Qui part ? Nous avons besoin d'un maximum d'informations pour établir votre programme.</p>
+                        <div class="input-block">
+                            <label for="adultes">Nombre d'adultes :</label>
+                            <input id="adultes" type="number" value=1 min="1" max="10">
+                        </div>
+                        <div class="input-block">
+                            <label for="enfants">Nombre d'enfants :</label>
+                            <input id="enfants" type="number" value=0 min=0 max=10>
+                        </div>
                     </div>
                     <div class="form-slide">
                         <h2 class="form-slide-heading">L'hébergement</h2>
                     </div>
                     <div class="form-slide">
-                        <h2 class="form-slide-heading">Les services</h2>
+                        <h2 class="form-slide-heading">Le transport</h2>
                     </div>
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Les repas</h2>
@@ -80,7 +95,11 @@
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Les activités</h2>
                     </div>
+                    <div class="form-slide">
+                        <h2 class="form-slide-heading">Vos informations</h2>
+                    </div>
                 </div>
+                <!--FORM SLIDER END-->
             </form>
             <!--FORM END-->
         </div>
