@@ -1,4 +1,6 @@
 "use strict";
+/******************** GLOBAL VARIABLES ********************/
+let activeSlide = 0;
 /******************** DOM ELEMENTS SELECTION *********************/
 // WELCOME MESSAGE
 const welcomeMessage = document.querySelector('.welcome-message');
@@ -6,6 +8,7 @@ const welcomeMessageButton = document.querySelector('.welcome-message-button');
 // FORM
 const form = document.querySelector('.form');
 const formSlideHeading = document.querySelectorAll('.form-slide-heading');
+const formSubmitButton = document.querySelector('.send-form-btn');
 // SLIDER
 const sliderButton = document.querySelectorAll('.slider-button');
 const sliderButtonIcons = document.querySelectorAll('.slider-button i');
@@ -24,11 +27,23 @@ function displayForm() {
     welcomeMessage.style.zIndex = "-1";
     form.style.opacity = "1";
     form.style.zIndex = "1";
+    displaySubmitButton();
     formSlideHeading.forEach((element) => {
         element.style.opacity = "1";
     });
 }
 ;
+// FORM SUBMIT HANDLING
+function displaySubmitButton() {
+    if (activeSlide !== 5) {
+        formSubmitButton.style.display = "none";
+        console.log(activeSlide);
+    }
+    else {
+        formSubmitButton.style.display = "block";
+        console.log(activeSlide);
+    }
+}
 // FOOTER DATE SETTING FUNCTION
 footerDateSetting();
 function footerDateSetting() {
@@ -38,7 +53,6 @@ function footerDateSetting() {
     year.textContent = `${currentYear}`;
 }
 // SLIDER HANDLING
-let activeSlide = 0;
 checkActiveSlide();
 checkArrowsDisplay();
 for (let i = 0; i < sliderButtonArray.length; i++) {
@@ -46,6 +60,7 @@ for (let i = 0; i < sliderButtonArray.length; i++) {
         const xIndex = -(Number(i + "00") / 6);
         slider.style.transform = `translateX(${xIndex}%)`;
         activeSlide = i;
+        displaySubmitButton();
         checkActiveSlide();
         checkArrowsDisplay();
     });
@@ -82,6 +97,7 @@ leftArrow.addEventListener('click', () => {
     slider.style.transform = `translateX(-${xIndex}%)`;
     checkArrowsDisplay();
     checkActiveSlide();
+    displaySubmitButton();
 });
 rightArrow.addEventListener('click', () => {
     activeSlide += 1;
@@ -89,4 +105,5 @@ rightArrow.addEventListener('click', () => {
     slider.style.transform = `translateX(-${xIndex}%)`;
     checkArrowsDisplay();
     checkActiveSlide();
+    displaySubmitButton();
 });

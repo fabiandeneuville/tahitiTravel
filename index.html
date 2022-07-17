@@ -73,12 +73,12 @@
                         <h2 class="form-slide-heading">Les voyageurs</h2>
                         <p class="form-slide-intro">Qui part ? Nous avons besoin d'un maximum d'informations pour établir votre programme.</p>
                         <div class="input-block">
-                            <label for="adultes">Nombre d'adultes :</label>
-                            <input id="adultes" type="number" value="1" min="1" max="10">
+                            <label class="number-label" for="adultes">Nombre d'adultes :</label>
+                            <input class="number-input" id="adultes" type="number" value="1" min="1" max="10">
                         </div>
                         <div class="input-block">
-                            <label for="enfants">Nombre d'enfants :</label>
-                            <input id="enfants" type="number" value="0" min="0" max="10">
+                            <label class="number-label" for="enfants">Nombre d'enfants :</label>
+                            <input class="number-input" id="enfants" type="number" value="0" min="0" max="10">
                         </div>
                     </div>
                     <div class="form-slide">
@@ -95,6 +95,23 @@
                     </div>
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Vos informations</h2>
+                        <p class="form-slide-intro">De manière à permettre à l'un de nos spécialistes de vous recontacter, nous avons besoin de quelques informations supplémentaires.</p>
+                        <div class="input-block">
+                            <label class="text-label" for="nom">Nom :</label>
+                            <input class="text-input" id="nom" type="text">
+                        </div>
+                        <div class="input-block">
+                            <label class="text-label" for="prenom">Prénom :</label>
+                            <input class="text-input" id="prenom" type="text">
+                        </div>
+                        <div class="input-block">
+                            <label class="text-label" for="email">Email :</label>
+                            <input class="text-input" id="email" type="email">
+                        </div>
+                        <div class="input-block">
+                            <label class="text-label" for="telephone">Telephone :</label>
+                            <input class="text-input" id="telephone" type="text">
+                        </div>
                     </div>
                 </div>
                 <div class="form-arrows-btn-container">
@@ -103,6 +120,9 @@
                     </div>
                     <div class="navigation-btn right" tabindex="0" role="button">
                         <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="send-form-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
                     </div>
                 </div>
                 <!--FORM SLIDER END-->
