@@ -57,9 +57,9 @@ main {
     z-index: 1;
     width: 80%;
     max-width: 900px;
-    height: 90vh;
+    height: 80vh;
     padding: 25px;
-    margin-top: 50px;
+    margin-top: 25px;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -92,10 +92,10 @@ main {
     margin: 10px 0;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 25px;
+    font-size: 16px;
 }
 
-.welcome-message-button {
-    clip-path: polygon(0 0, 90% 0%, 100% 50%, 90% 100%, 0 100%);
+.welcome-message-button {       
     width: 150px;
     height: 40px;
     display: flex;
@@ -103,15 +103,27 @@ main {
     align-items: center;
     font-size: 25px;
     cursor: pointer;
-    border-radius: 3px;
-    color: #2C5545;
-    background-color: rgb(124,252,0);
+    color: rgb(241, 233, 212);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(124,252,0);
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
 .welcome-message-button:hover {
     color: rgb(124,252,0);
     background-color: #2C5545;
+}
+
+@media screen and (max-width:600px) {
+
+    .welcome-message-heading {
+        font-size: 20px
+    }
+
+    .welcome-message-text {
+        font-size: 14px;
+    }
 }
 
 .form {
