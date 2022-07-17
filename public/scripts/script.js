@@ -12,6 +12,8 @@ const sliderButtonIcons = document.querySelectorAll('.slider-button i');
 const sliderButtonIconsArray = Array.from(sliderButtonIcons);
 const sliderButtonArray = Array.from(sliderButton);
 const slider = document.querySelector('.form-slider');
+const leftArrow = document.querySelector('.left');
+const rightArrow = document.querySelector('.right');
 /******************** LISTENERS ********************/
 // WELCOME MESSAGE BUTTON
 welcomeMessageButton.addEventListener('click', displayForm);
@@ -38,13 +40,14 @@ function footerDateSetting() {
 // SLIDER HANDLING
 let activeSlide = 0;
 checkActiveSlide();
+checkArrowsDisplay();
 for (let i = 0; i < sliderButtonArray.length; i++) {
     sliderButtonArray[i].addEventListener('click', () => {
         const xIndex = -(Number(i + "00") / 6);
-        console.log(xIndex);
         slider.style.transform = `translateX(${xIndex}%)`;
         activeSlide = i;
         checkActiveSlide();
+        checkArrowsDisplay();
     });
 }
 function checkActiveSlide() {
@@ -59,3 +62,31 @@ function checkActiveSlide() {
         }
     }
 }
+function checkArrowsDisplay() {
+    if (activeSlide === 0) {
+        leftArrow.classList.add('hidden');
+        rightArrow.classList.remove('hidden');
+    }
+    else if (activeSlide === 5) {
+        leftArrow.classList.remove('hidden');
+        rightArrow.classList.add('hidden');
+    }
+    else {
+        leftArrow.classList.remove('hidden');
+        rightArrow.classList.remove('hidden');
+    }
+}
+leftArrow.addEventListener('click', () => {
+    activeSlide -= 1;
+    const xIndex = Number(activeSlide + "00") / 6;
+    slider.style.transform = `translateX(-${xIndex}%)`;
+    checkArrowsDisplay();
+    checkActiveSlide();
+});
+rightArrow.addEventListener('click', () => {
+    activeSlide += 1;
+    const xIndex = Number(activeSlide + "00") / 6;
+    slider.style.transform = `translateX(-${xIndex}%)`;
+    checkArrowsDisplay();
+    checkActiveSlide();
+});

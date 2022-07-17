@@ -14,6 +14,8 @@ const sliderButtonIcons = document.querySelectorAll('.slider-button i') as NodeL
 const sliderButtonIconsArray : HTMLParagraphElement[] = Array.from(sliderButtonIcons);
 const sliderButtonArray : HTMLDivElement[] = Array.from(sliderButton);
 const slider = document.querySelector('.form-slider') as HTMLDivElement;
+const leftArrow = document.querySelector('.left') as HTMLDivElement;
+const rightArrow = document.querySelector('.right') as HTMLDivElement;
 
 /******************** LISTENERS ********************/
 
@@ -44,19 +46,20 @@ function footerDateSetting() : void{
 
 // SLIDER HANDLING
 let activeSlide : number = 0;
-checkActiveSlide()
+checkActiveSlide();
+checkArrowsDisplay();
 
 for(let i = 0 ; i < sliderButtonArray.length ; i++){
     sliderButtonArray[i].addEventListener('click', () => {
         const xIndex = - (Number(i + "00") / 6);
-        console.log(xIndex)
         slider.style.transform = `translateX(${xIndex}%)`;
         activeSlide = i;
         checkActiveSlide();
+        checkArrowsDisplay();
     })
 }
 
-function checkActiveSlide(){
+function checkActiveSlide() : void {
     for(let i = 0; i < sliderButtonIconsArray.length ; i++){
         if(activeSlide === i){
             sliderButtonIconsArray[i].style.color = "rgb(124,252,0)";
@@ -68,3 +71,31 @@ function checkActiveSlide(){
     }
 }
 
+function checkArrowsDisplay() : void {
+    if(activeSlide === 0){
+        leftArrow.classList.add('hidden');
+        rightArrow.classList.remove('hidden');
+    } else if (activeSlide === 5){
+        leftArrow.classList.remove('hidden');
+        rightArrow.classList.add('hidden');
+    } else {
+        leftArrow.classList.remove('hidden');
+        rightArrow.classList.remove('hidden');
+    }
+}
+
+leftArrow.addEventListener('click', () => {
+    activeSlide -= 1;
+    const xIndex = Number(activeSlide+"00")/6;
+    slider.style.transform = `translateX(-${xIndex}%)`
+    checkArrowsDisplay();
+    checkActiveSlide();
+});
+
+rightArrow.addEventListener('click', () => {
+    activeSlide += 1;
+    const xIndex = Number(activeSlide+"00")/6;
+    slider.style.transform = `translateX(-${xIndex}%)`
+    checkArrowsDisplay();
+    checkActiveSlide();
+});
