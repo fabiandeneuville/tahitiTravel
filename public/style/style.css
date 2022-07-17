@@ -95,7 +95,8 @@ main {
     font-size: 16px;
 }
 
-.welcome-message-button {       
+.welcome-message-button {   
+    z-index: 5;    
     width: 150px;
     height: 40px;
     display: flex;
