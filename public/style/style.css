@@ -57,7 +57,7 @@ main {
     z-index: 1;
     width: 80%;
     max-width: 900px;
-    height: 90vh;
+    height: auto;
     padding: 10px;
     margin-top: 25px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -148,16 +148,13 @@ main {
 }
 
 .form-arrows-btn-container {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     height: 50px;
+    padding: 20px 10px;
 }
 
 .form-arrows-btn-container i {
