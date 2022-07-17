@@ -1,0 +1,180 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* HEADER STYLE START */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: #2C5545;
+    opacity: 0.8;
+}
+
+.logo-container {
+    width: 200px;
+    overflow: hidden;
+}
+
+.logo-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* HEADER STYLE END */
+
+/* MAIN STYLE START */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: -1;
+}
+
+.background-image {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-image img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    max-width: 900px;
+    height: 90vh;
+    padding: 25px;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+        margin-top: 25px;
+    }        
+}
+
+.welcome-message {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+.welcome-message-heading {
+    color:  rgb(241, 233, 212);
+}
+
+.welcome-message-text  {
+    color:  rgb(241, 233, 212);
+    margin: 10px 0;
+}
+
+.welcome-message-button {
+    clip-path: polygon(0 0, 90% 0%, 100% 50%, 90% 100%, 0 100%);
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #2C5545;
+    background-color: rgb(124,252,0);
+    transition: all 0.3s ease;
+}
+
+.welcome-message-button:hover {
+    color: rgb(124,252,0);
+    background-color: #2C5545;
+}
+
+.form {
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+}
+
+.form-btn-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: #2C5545;
+    opacity: 0.8;
+    padding: 0 10px;
+}
+
+.form-btn-container i {
+    color: rgb(241, 233, 212);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-btn-container i:hover {
+    transform: scale(1.5);
+}
+
+.form-slide-heading {
+    color: rgb(241, 233, 212);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.form-slider {
+    width: 500%;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.5s ease;
+}
+.form-slide {
+    width: 100%;
+}
+
+
+/* MAIN STYLE END */
+
+/* FOOTER STYLE START*/
+
+footer {
+    margin-top: 25px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(241, 233, 212);
+    background-color: #2C5545;
+    opacity: 0.8;
+}
+
+/* FOOTER STYLE EMD* /
