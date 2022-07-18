@@ -97,21 +97,26 @@
                         <h2 class="form-slide-heading">Vos informations</h2>
                         <p class="form-slide-intro">De manière à permettre à l'un de nos spécialistes de vous recontacter, nous avons besoin de quelques informations supplémentaires.</p>
                         <div class="input-block">
-                            <label class="text-label" for="nom">Nom :</label>
-                            <input class="text-input" id="nom" type="text">
+                            <label class="text-label" for="name">Nom *</label>
+                            <input class="text-input" id="name" type="text" required>
+                            <p class="error-message name-error-massage">{{ error-message }}</p>
                         </div>
                         <div class="input-block">
-                            <label class="text-label" for="prenom">Prénom :</label>
-                            <input class="text-input" id="prenom" type="text">
+                            <label class="text-label" for="firstname">Prénom</label>
+                            <input class="text-input" id="firstname" type="text">
+                            <p class="error-message firstname-error-massage">{{ error-message }}</p>
                         </div>
                         <div class="input-block">
-                            <label class="text-label" for="email">Email :</label>
-                            <input class="text-input" id="email" type="email">
+                            <label class="text-label" for="email">Email *</label>
+                            <input class="text-input" id="email" type="email" required>
+                            <p class="error-message email-error-massage">{{ error-message }}</p>
                         </div>
                         <div class="input-block">
-                            <label class="text-label" for="telephone">Telephone :</label>
-                            <input class="text-input" id="telephone" type="text">
+                            <label class="text-label" for="phone">Telephone</label>
+                            <input class="text-input" id="phone" type="text">
+                            <p class="error-message phone-error-massage">{{ error-message }}</p>
                         </div>
+                        <p class="required-inputs-info"> * Champs obligatoires</p>
                     </div>
                 </div>
                 <div class="form-arrows-btn-container">
