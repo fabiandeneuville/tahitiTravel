@@ -88,9 +88,8 @@ main {
 }
 
 .welcome-message-text  {
-    color:  rgb(241, 233, 212);
     margin: 10px 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(241, 233, 212, 0.7);
     padding: 25px;
     font-size: 16px;
 }
@@ -112,8 +111,8 @@ main {
 }
 
 .welcome-message-button:hover {
-    color: rgb(124,252,0);
-    background-color: #2C5545;
+    color: black;
+    background-color: rgb(124,252,0);
 }
 
 @media screen and (max-width:600px) {
@@ -143,8 +142,13 @@ main {
     margin-bottom: 10px;
 }
 
-.form-slides-btn-container i {
+.slider-button{
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-button:hover {
+    transform: scale(1.2);
 }
 
 .form-arrows-btn-container {
@@ -180,8 +184,8 @@ main {
 }
 
 .form-slide-heading {
-    color: rgb(241, 233, 212);
-    background-color: rgba(0, 0, 0, 0.7);
+    color: black;
+    background-color: rgb(124,252,0);
     padding: 5px 15px;
     display:block;
     opacity: 0;
@@ -200,9 +204,9 @@ main {
 }
 
 .form-slide-intro {
-    color: rgb(241, 233, 212);
-    margin: 15px 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    color: black;
+    margin: 10px 0;
+    background-color: rgba(241, 233, 212, 0.7);
     padding: 5px 15px;
     line-height: 25px;
 }
@@ -212,22 +216,29 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 5px;
+    background-color: rgba(241, 233, 212, 0.7);
+    margin-bottom: 10px;
     padding: 15px;
 }
 
 .number-label {
-    color: rgb(241, 233, 212);
+    color: black;
+}
+
+label {
+    font-weight: 600;
 }
 
 input {
-    border: none;
+    border: 2px solid rgb(124,252,0);
     border-radius: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-bottom: 2px solid rgb(124,252,0);
-    color: rgb(241, 233, 212);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
     padding-left: 10px;
+}
+
+.level-input {
+    border: 2px solid rgb(124,252,0);
 }
 
 .number-input {
@@ -235,12 +246,47 @@ input {
 }
 
 .text-label {
-    color: rgb(241, 233, 212);
+    color: black;
     width: 80px;
 }
 
 .text-input {
     width: calc(100% - 80px);
+}
+
+.meal-plan-input-block {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.meal-plan-label {
+    margin-right: 10px;
+}
+
+.meal-plan-input {
+    border-radius: none;
+    border: 2px solid rgb(124,252,0);
+    background-color: rgba(255,255,255,0.7)
+}
+
+.meal-plan-text {
+    padding: 10px;
+    font-size: 12px;
+}
+
+.meal-comment-label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.meal-comment-textarea {
+    display: block;
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    font-family: 'roboto', Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgb(124,252,0);
 }
 
 .send-form-btn {
@@ -252,9 +298,10 @@ input {
 .error-message {
     height: 20px;
     width: 100%;
+    color: crimson;
+    font-weight: 800;
     line-height: 20px;
-    font-size: 12px;
-    color: rgb(241, 233, 212);
+    font-size: 14px;
     padding: 5px;
     text-align: right;
 }
@@ -275,7 +322,7 @@ input {
 /* FOOTER STYLE START*/
 
 footer {
-    margin-top: 100px;
+    margin-top: 25px;
     height: auto;
     display: flex;
     flex-direction: column;
