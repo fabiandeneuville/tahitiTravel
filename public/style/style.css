@@ -276,14 +276,21 @@ input {
 
 footer {
     margin-top: 100px;
-    height: 100px;
+    height: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     color: rgb(241, 233, 212);
     background-color: #2C5545;
     opacity: 0.8;
     border-top: 5px solid rgb(124,252,0);
+    padding: 25px;
+}
+
+footer p {
+    text-align: center;
+    margin: 10px auto;
 }
 
 /* FOOTER STYLE EMD* /
