@@ -69,87 +69,100 @@
                 <!--FORM BUTTONS CONTAINER END-->
                 <!--FORM SLIDER START-->
                 <div class="form-slider">
+                    <!--1 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Les voyageurs</h2>
                         <p class="form-slide-intro">Qui part ? Nous avons besoin d'un maximum d'informations pour établir votre programme.</p>
                         <div class="input-block">
-                            <label class="number-label" for="adults">Adultes</label>
-                            <input class="number-input" id="adults" type="number" value="1" min="1" max="10">
+                            <label for="adults">Adultes</label>
+                            <input id="adults" type="number" value="1" min="1" max="10">
                         </div>
                         <div class="input-block">
-                            <label class="number-label" for="kids">Enfants (- 12 ans)</label>
-                            <input class="number-input" id="kids" type="number" value="0" min="0" max="10">
+                            <label for="kids">Enfants (- 12 ans)</label>
+                            <input id="kids" type="number" value="0" min="0" max="10">
                         </div>
                         <div class="input-block">
-                            <label class="number-label" for="animals">Des animaux ?</label>
-                            <input class="number-input" id="animals" type="number" value="0" min="0" max="10">
+                            <label for="animals">Des animaux ?</label>
+                            <input id="animals" type="number" value="0" min="0" max="10">
                         </div>
                         <div class="level-input-block input-block">
-                            <label class="level-label" for="level-input">Votre niveau : </label>
-                            <select class="level-input select-input" name="level-input" id="level-input">
-                                <option class="select-input-option" value="beginner">Débutant</option>
-                                <option class="select-input-option" value="intermediate">Intermédiaire</option>
-                                <option class="select-input-option" value="experienced">Confirmé</option>
-                                <option class="select-input-option" value="sportive">Sportif</option>
+                            <label for="level-input">Votre niveau : </label>
+                            <select name="level-input" id="level-input">
+                                <option value="beginner">Débutant</option>
+                                <option value="intermediate">Intermédiaire</option>
+                                <option value="experienced">Confirmé</option>
+                                <option value="sportive">Sportif</option>
                             </select>
                         </div>
                     </div>
+                    <!--1 SLIDE END-->
+                    <!--2 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">L'hébergement</h2>
                         <p class="form-slide-intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nihil.</p>
                     </div>
+                    <!--2 SLIDE END-->
+                    <!--3 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Le transport</h2>
                         <p class="form-slide-intro">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, tempora?</p>
                     </div>
+                    <!--3 SLIDE END-->
+                    <!--4 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Les repas</h2>
                         <p class="form-slide-intro">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, eum?</p>
-                        <div class="meal-plan-input-block input-block">
-                            <label class="meal-plan-label" for="meal-plan">Votre formule : </label>
-                            <select class="meal-plan-input select-input" name="meal-plan" id="meal-plan">
-                                <option class="select-input-option" value="noMeal">Sans repas</option>
-                                <option class="select-input-option" value="bb">Petit déjeuner</option>
-                                <option class="select-input-option" value="hb">Demi pension</option>
-                                <option class="select-input-option" value="fb">Pension complète *</option>
+                        <div class="input-block">
+                            <label for="meal-plan">Votre formule : </label>
+                            <select name="meal-plan" id="meal-plan">
+                                <option value="noMeal">Sans repas</option>
+                                <option value="bb">Petit déjeuner</option>
+                                <option value="hb">Demi pension</option>
+                                <option value="fb">Pension complète *</option>
                             </select>
-                            <p class="meal-plan-text">* Selon le choix d'hébergement et de parcours, le repas de midi pourra se présenter sous la forme d'un panier repas, distribué le matin, au départ.</p>
+                            <p class="input-block-text">* Selon le choix d'hébergement et de parcours, le repas de midi pourra se présenter sous la forme d'un panier repas, distribué le matin, au départ.</p>
                         </div>
-                        <div class="meal-plan-input-block input-block">
-                            <label class="meal-comment-label" for="meal-comment">N'hésitez pas à nous faire part de souhaits ou d'informations complémentaires :</label>
-                            <textarea class="meal-comment-textarea" name="meal-comment" id="meal-comment"></textarea>
+                        <div class="input-block">
+                            <label for="meal-comment">N'hésitez pas à nous faire part de souhaits ou d'informations complémentaires :</label>
+                            <textarea name="meal-comment" id="meal-comment"></textarea>
                         </div>
                     </div>
+                    <!--4 SLIDE END-->
+                    <!--5 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Les activités</h2>
                         <p class="form-slide-intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, consequatur?</p>
                     </div>
+                    <!--5 SLIDE END-->
+                    <!--6 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Vos informations</h2>
                         <p class="form-slide-intro">De manière à permettre à l'un de nos spécialistes de vous recontacter, nous avons besoin de quelques informations supplémentaires.</p>
                         <div class="input-block">
-                            <label class="text-label" for="name">Nom *</label>
-                            <input class="text-input" id="name" type="text" required>
+                            <label class="info-label" for="name">Nom *</label>
+                            <input class="info-input" id="name" type="text" required>
                             <p class="error-message name-error-massage">{{ error-message }}</p>
                         </div>
                         <div class="input-block">
-                            <label class="text-label" for="firstname">Prénom</label>
-                            <input class="text-input" id="firstname" type="text">
+                            <label class="info-label" for="firstname">Prénom</label>
+                            <input class="info-input" id="firstname" type="text">
                             <p class="error-message firstname-error-massage">{{ error-message }}</p>
                         </div>
                         <div class="input-block">
-                            <label class="text-label" for="email">Email *</label>
-                            <input class="text-input" id="email" type="email" required>
+                            <label class="info-label" for="email">Email *</label>
+                            <input class="info-input" id="email" type="email" required>
                             <p class="error-message email-error-massage">{{ error-message }}</p>
                         </div>
                         <div class="input-block">
-                            <label class="text-label" for="phone">Telephone</label>
-                            <input class="text-input" id="phone" type="text">
+                            <label class="info-label" for="phone">Telephone</label>
+                            <input class="info-input" id="phone" type="text">
                             <p class="error-message phone-error-massage">{{ error-message }}</p>
                         </div>
                         <p class="required-inputs-info"> * Champs obligatoires</p>
                     </div>
+                    <!--6 SLIDE END-->
                 </div>
+                <!--SLIDER NAVIGATION START-->
                 <div class="form-arrows-btn-container">
                     <div class="navigation-btn left" tabindex="0" role="button">
                         <i class="fa-solid fa-arrow-left"></i>
@@ -161,6 +174,7 @@
                         <i class="fa-solid fa-paper-plane"></i>
                     </div>
                 </div>
+                <!--SLIDER NAVIGATION END-->
                 <!--FORM SLIDER END-->
             </form>
             <!--FORM END-->
