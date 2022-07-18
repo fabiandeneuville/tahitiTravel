@@ -1,6 +1,13 @@
 /******************** GLOBAL VARIABLES ********************/ 
 let activeSlide : number = 0;
 
+/******************** REGEXP ********************/
+
+const nameRegexp : RegExp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
+const firstNameRegexp : RegExp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
+const emailRegexp : RegExp = /^[a-z0-9.-_]+[@]{1}[a-z0-9.-_]+[.]{1}[a-z]{2,10}$/gi;
+const phoneRegexp : RegExp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
+
 /******************** DOM ELEMENTS SELECTION *********************/
 
 // WELCOME MESSAGE
@@ -45,10 +52,8 @@ function displayForm() : void {
 function displaySubmitButton(){
     if(activeSlide !== 5){
         formSubmitButton.style.display = "none";
-        console.log(activeSlide)
     } else {
         formSubmitButton.style.display = "block";
-        console.log(activeSlide)
     }
 }
 
