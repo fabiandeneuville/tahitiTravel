@@ -1,4 +1,5 @@
 /******************** GLOBAL VARIABLES ********************/ 
+
 let activeSlide : number = 0;
 
 /******************** REGEXP ********************/
@@ -10,16 +11,19 @@ const phoneRegexp : RegExp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
 
 /******************** DOM ELEMENTS SELECTION *********************/
 
-// WELCOME MESSAGE
+/********** WELCOME MESSAGE **********/
+
 const welcomeMessage = document.querySelector('.welcome-message') as HTMLDivElement;
 const welcomeMessageButton = document.querySelector('.welcome-message-button') as HTMLDivElement;
 
-// FORM
+/********** FORM ***********/
+
 const form = document.querySelector('.form') as HTMLFormElement;
 const formSlideHeading = document.querySelectorAll('.form-slide-heading') as NodeListOf<HTMLHeadingElement>;
 const formSubmitButton = document.querySelector('.send-form-btn') as HTMLDivElement;
 
-// SLIDER
+/********** SLIDER **********/
+
 const sliderButton = document.querySelectorAll('.slider-button') as NodeListOf<HTMLDivElement>;
 const sliderButtonIcons = document.querySelectorAll('.slider-button i') as NodeListOf<HTMLParagraphElement>;
 const sliderButtonIconsArray : HTMLParagraphElement[] = Array.from(sliderButtonIcons);
@@ -30,12 +34,14 @@ const rightArrow = document.querySelector('.right') as HTMLDivElement;
 
 /******************** LISTENERS ********************/
 
-// WELCOME MESSAGE BUTTON
+/********** WELCOME MESSAGE BUTTON **********/ 
+
 welcomeMessageButton.addEventListener('click', displayForm)
 
 /******************** FUNCTIONS ********************/ 
 
-// FORM DISPLAY FUNCTION
+/********** FORM DISPLAY FUNCTION **********/
+
 function displayForm() : void {
     welcomeMessage.style.opacity = "0";
     welcomeMessage.style.zIndex = "-1"
@@ -47,7 +53,7 @@ function displayForm() : void {
     });
 };
 
-// FORM SUBMIT HANDLING
+/********** FORM SUBMIT HANDLING **********/
 
 function displaySubmitButton(){
     if(activeSlide !== 5){
@@ -57,7 +63,8 @@ function displaySubmitButton(){
     }
 }
 
-// FOOTER DATE SETTING FUNCTION
+/********** FOOTER DATE SETTING FUNCTION ***********/
+
 footerDateSetting();
 function footerDateSetting() : void{
     const year = document.querySelector('.year') as HTMLSpanElement;
@@ -66,7 +73,8 @@ function footerDateSetting() : void{
     year.textContent = `${currentYear}`;
 }
 
-// SLIDER HANDLING
+/********** SLIDER HANDLING **********/
+
 checkActiveSlide();
 checkArrowsDisplay();
 
