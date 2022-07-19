@@ -57,9 +57,10 @@ const rightArrow = document.querySelector('.right') as HTMLDivElement;
 /********** WELCOME MESSAGE BUTTON **********/ 
 
 welcomeMessageButton.addEventListener('click', displayForm);
+welcomeMessageButton.addEventListener('keypress', displayForm);
 
 /********** FORM **********/
-
+    
 form.addEventListener('input', activateSubmitButton);
 
 /********** ACTIVITY BUTTONS ***********/
@@ -161,6 +162,14 @@ checkArrowsDisplay();
 
 for(let i = 0 ; i < sliderButtonArray.length ; i++){
     sliderButtonArray[i].addEventListener('click', () => {
+        const xIndex = - (Number(i + "00") / 6);
+        slider.style.transform = `translateX(${xIndex}%)`;
+        activeSlide = i;
+        displaySubmitButton();
+        checkActiveSlide();
+        checkArrowsDisplay();
+    })
+    sliderButtonArray[i].addEventListener('keypress', () => {
         const xIndex = - (Number(i + "00") / 6);
         slider.style.transform = `translateX(${xIndex}%)`;
         activeSlide = i;
