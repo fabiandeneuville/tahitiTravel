@@ -75,19 +75,19 @@
                         <p class="form-slide-intro">Nous avons besoin de connaître la structure de votre groupe ainsi que son niveau pour définir un programme.</p>
                         <div class="input-block">
                             <label for="adults">Adultes</label>
-                            <input id="adults" type="number" value="1" min="1" max="10">
+                            <input class="tab-input" id="adults" type="number" value="1" min="1" max="10">
                         </div>
                         <div class="input-block">
                             <label for="kids">Enfants (- 12 ans)</label>
-                            <input id="kids" type="number" value="0" min="0" max="10">
+                            <input class="tab-input" id="kids" type="number" value="0" min="0" max="10">
                         </div>
                         <div class="input-block">
                             <label for="animals">Des animaux ?</label>
-                            <input id="animals" type="number" value="0" min="0" max="10">
+                            <input class="tab-input" id="animals" type="number" value="0" min="0" max="10">
                         </div>
                         <div class="level-input-block input-block">
                             <label for="level-input">Votre niveau : </label>
-                            <select name="level-input" id="level-input">
+                            <select class="tab-input" name="level-input" id="level-input">
                                 <option value="beginner">Débutant</option>
                                 <option value="intermediate">Intermédiaire</option>
                                 <option value="experienced">Confirmé</option>
@@ -101,8 +101,8 @@
                         <h2 class="form-slide-heading">L'hébergement</h2>
                         <p class="form-slide-intro">Avez-vous déjà une idée du mode d'hébergement souhaité ?.</p>
                         <div class="input-block">
-                            <label for="transport">Votre hébergement : </label>
-                            <select name="transport" id="transport">
+                            <label for="hotels">Votre hébergement : </label>
+                            <select class="tab-input" name="hotels" id="transport">
                                 <option value="Camping">Camping</option>
                                 <option value="Petite hôtellerie familiale">Petite hôtellerie familiale</option>
                                 <option value="Gîtes et locations">Gîtes et locations</option>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="input-block">
                             <label for="hotel-comment">N'hésitez pas à nous faire part de souhaits ou d'informations complémentaires :</label>
-                            <textarea name="hotel-comment" id="hotel-comment"></textarea>
+                            <textarea class="tab-input" name="hotel-comment" id="hotel-comment"></textarea>
                         </div>
                     </div>
                     <!--2 SLIDE END-->
@@ -121,7 +121,7 @@
                         <p class="form-slide-intro">Par soucis écologique, nous ne proposons pas de vols depuis la France à destinations des Alpes.</p>
                         <div class="input-block">
                             <label for="transport">Votre mode de transport : </label>
-                            <select name="transport" id="transport">
+                            <select class="tab-input" name="transport" id="transport">
                                 <option value="Véhicule personnel">Véhicule personnel</option>
                                 <option value="Train + Véhicule de location">Train + Véhicule de location</option>
                                 <option value="Train + transferts privatifs">Train + transferts privatifs</option>
@@ -130,7 +130,7 @@
                         </div>
                         <div class="input-block">
                             <label for="transport-comment">N'hésitez pas à nous faire part de souhaits ou d'informations complémentaires :</label>
-                            <textarea name="transport-comment" id="transport-comment"></textarea>
+                            <textarea class="tab-input" name="transport-comment" id="transport-comment"></textarea>
                         </div>
                     </div>
                     <!--3 SLIDE END-->
@@ -140,7 +140,7 @@
                         <p class="form-slide-intro">Choisissez maintenant une formule pour les repas.</p>
                         <div class="input-block">
                             <label for="meal-plan">Votre formule : </label>
-                            <select name="meal-plan" id="meal-plan">
+                            <select class="tab-input" name="meal-plan" id="meal-plan">
                                 <option value="Sans repas">Sans repas</option>
                                 <option value="Petit déjeuner">Petit déjeuner</option>
                                 <option value="Demi pension">Demi pension</option>
@@ -150,7 +150,7 @@
                         </div>
                         <div class="input-block">
                             <label for="meal-comment">N'hésitez pas à nous faire part de souhaits ou d'informations complémentaires :</label>
-                            <textarea name="meal-comment" id="meal-comment"></textarea>
+                            <textarea class="tab-input" name="meal-comment" id="meal-comment"></textarea>
                         </div>
                     </div>
                     <!--4 SLIDE END-->
@@ -159,34 +159,34 @@
                         <h2 class="form-slide-heading">Les activités</h2>
                         <p class="form-slide-intro">Quelles activités souhaiteriez-vous pratiquer en plus de la randonnée ?</p>
                         <div class="activity-buttons-container">
-                            <div class="activity-button" data-name="Équitation">
+                            <div class="activity-button tab-input" data-name="Équitation">
                                 <i class="fa-solid fa-horse"></i>
                                 <span>Équitation</span>
                             </div>
-                            <div class="activity-button" data-name="VTT">
+                            <div class="activity-button tab-input" data-name="VTT">
                                 <i class="fa-solid fa-bicycle"></i>
                                 <span>VTT</span>
                             </div>
-                            <div class="activity-button" data-name="Ski d'été">
+                            <div class="activity-button tab-input" data-name="Ski d'été">
                                 <i class="fa-solid fa-person-skiing-nordic"></i>
                                 <span>Ski d'été</span>
                             </div>
-                            <div class="activity-button" data-name="Sports d'eau">
+                            <div class="activity-button tab-input" data-name="Sports d'eau">
                                 <i class="fa-solid fa-person-swimming"></i>
                                 <span>Sports d'eau</span>
                             </div>
-                            <div class="activity-button" data-name="Pêche">
+                            <div class="activity-button tab-input" data-name="Pêche">
                                 <i class="fa-solid fa-fish"></i>
                                 <span>Pêche</span>
                             </div>
-                            <div class="activity-button" data-name="Autres">
+                            <div class="activity-button tab-input" data-name="Autres">
                                 <i class="fa-solid fa-volleyball"></i>
                                 <span>Autres</span>
                             </div>
                         </div>
                         <div class="input-block">
                             <label for="activity-comment">N'hésitez pas à nous faire part de souhaits ou d'informations complémentaires :</label>
-                            <textarea name="activity-comment" id="activity-comment"></textarea>
+                            <textarea class="tab-input" name="activity-comment" id="activity-comment"></textarea>
                         </div>
                     </div>
                     <!--5 SLIDE END-->
@@ -196,17 +196,17 @@
                         <p class="form-slide-intro">De manière à permettre à l'un de nos spécialistes de vous recontacter, nous avons besoin de quelques informations supplémentaires.</p>
                         <div class="input-block">
                             <label class="info-label" for="name">Nom *</label>
-                            <input class="info-input" id="name" type="text" required>
+                            <input class="info-input tab-input" id="name" type="text" required>
                             <p class="error-message name-error-message"></p>
                         </div>
                         <div class="input-block">
                             <label class="info-label" for="email">Email *</label>
-                            <input class="info-input" id="email" type="email" required>
+                            <input class="info-input tab-input" id="email" type="email" required>
                             <p class="error-message email-error-message"></p>
                         </div>
                         <div class="input-block">
                             <label class="info-label" for="phone">Telephone</label>
-                            <input class="info-input" id="phone" type="text">
+                            <input class="info-input tab-input" id="phone" type="text">
                             <p class="error-message phone-error-message"></p>
                         </div>
                         <p class="required-inputs-info"> * Champs obligatoires</p>
@@ -221,7 +221,7 @@
                     <div class="navigation-btn right" tabindex="0" role="button">
                         <i class="fa-solid fa-arrow-right"></i>
                     </div>
-                    <div class="send-form-btn" tabindex="-1" role="button">
+                    <div class="send-form-btn" role="button">
                         <i class="fa-solid fa-paper-plane"></i>
                     </div>
                 </div>

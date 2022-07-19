@@ -5,7 +5,7 @@ let activeSlide : number = 0;
 const pickedActivities : string[] = [];
 
 let nameIsValide : boolean = false;
-let emailIsValide : boolean = false;
+let emailIsValide : boolean = false;                    
 let phoneIsValide : boolean = false;
 
 /******************** REGEXP ********************/
@@ -60,13 +60,25 @@ welcomeMessageButton.addEventListener('click', displayForm);
 welcomeMessageButton.addEventListener('keypress', displayForm);
 
 /********** FORM **********/
-    
+
 form.addEventListener('input', activateSubmitButton);
 
 /********** ACTIVITY BUTTONS ***********/
 
 activitiesButton.forEach((button : HTMLDivElement) => {
     button.addEventListener('click', () => {
+        button.classList.toggle('picked');
+        if(pickedActivities.includes(button.dataset.name as string)){
+            for(let i = 0 ; i < pickedActivities.length ; i++){
+                if(pickedActivities[i] === button.dataset.name){
+                    pickedActivities.splice(i, 1);
+                }
+            }
+        } else {
+            pickedActivities.push(button.dataset.name as string)
+        }
+    })
+    button.addEventListener('keypress', () => {
         button.classList.toggle('picked');
         if(pickedActivities.includes(button.dataset.name as string)){
             for(let i = 0 ; i < pickedActivities.length ; i++){
@@ -129,11 +141,13 @@ phoneInput.addEventListener('input', () => {
 
 /********** FORM SUBMIT HANDLING **********/
 
-function activateSubmitButton(){
+function activateSubmitButton() : void {
     if(nameIsValide && emailIsValide && phoneIsValide){
         formSubmitButton.classList.add('show-send-form-btn');
+        formSubmitButton.setAttribute("tabindex", "0");
     } else if (!nameIsValide || !emailIsValide || !phoneIsValide){
         formSubmitButton.classList.remove('show-send-form-btn');
+        formSubmitButton.setAttribute("tabindex", "-1");
     }
 }
 
@@ -185,10 +199,12 @@ function checkActiveSlide() : void {
             sliderButtonIconsArray[i].style.color = "rgb(0,250,154)";
             sliderButtonIconsArray[i].style.transform = "scale(1.7)";
             slidesArray[i].classList.add('showSlide');
+            setTabindex(slidesArray[i], "0");
         } else {
             sliderButtonIconsArray[i].style.color = "rgb(241, 233, 212)";
             sliderButtonIconsArray[i].style.transform = "scale(1)";
             slidesArray[i].classList.remove('showSlide');
+            setTabindex(slidesArray[i], "-1");
         }
     }
 }
@@ -215,6 +231,15 @@ leftArrow.addEventListener('click', () => {
     displaySubmitButton();
 });
 
+leftArrow.addEventListener('keypress', () => {
+    activeSlide -= 1;
+    const xIndex = Number(activeSlide+"00")/6;
+    slider.style.transform = `translateX(-${xIndex}%)`
+    checkArrowsDisplay();
+    checkActiveSlide();
+    displaySubmitButton();
+});
+
 rightArrow.addEventListener('click', () => {
     activeSlide += 1;
     const xIndex = Number(activeSlide+"00")/6;
@@ -223,3 +248,19 @@ rightArrow.addEventListener('click', () => {
     checkActiveSlide();
     displaySubmitButton();
 });
+
+rightArrow.addEventListener('keypress', () => {
+    activeSlide += 1;
+    const xIndex = Number(activeSlide+"00")/6;
+    slider.style.transform = `translateX(-${xIndex}%)`
+    checkArrowsDisplay();
+    checkActiveSlide();
+    displaySubmitButton();
+});
+
+function setTabindex(slide : HTMLDivElement, value : string) : void {
+    const tabInputs = slide.querySelectorAll('.tab-input') as NodeListOf<HTMLElement>;
+    tabInputs.forEach((input : HTMLElement) => {
+        input.setAttribute('tabindex', value);
+    })
+}

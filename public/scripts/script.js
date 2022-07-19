@@ -58,6 +58,19 @@ activitiesButton.forEach((button) => {
             pickedActivities.push(button.dataset.name);
         }
     });
+    button.addEventListener('keypress', () => {
+        button.classList.toggle('picked');
+        if (pickedActivities.includes(button.dataset.name)) {
+            for (let i = 0; i < pickedActivities.length; i++) {
+                if (pickedActivities[i] === button.dataset.name) {
+                    pickedActivities.splice(i, 1);
+                }
+            }
+        }
+        else {
+            pickedActivities.push(button.dataset.name);
+        }
+    });
 });
 /******************** FUNCTIONS ********************/
 /********** FORM DISPLAY FUNCTION **********/
@@ -107,9 +120,11 @@ phoneInput.addEventListener('input', () => {
 function activateSubmitButton() {
     if (nameIsValide && emailIsValide && phoneIsValide) {
         formSubmitButton.classList.add('show-send-form-btn');
+        formSubmitButton.setAttribute("tabindex", "0");
     }
     else if (!nameIsValide || !emailIsValide || !phoneIsValide) {
         formSubmitButton.classList.remove('show-send-form-btn');
+        formSubmitButton.setAttribute("tabindex", "-1");
     }
 }
 function displaySubmitButton() {
@@ -155,11 +170,13 @@ function checkActiveSlide() {
             sliderButtonIconsArray[i].style.color = "rgb(0,250,154)";
             sliderButtonIconsArray[i].style.transform = "scale(1.7)";
             slidesArray[i].classList.add('showSlide');
+            setTabindex(slidesArray[i], "0");
         }
         else {
             sliderButtonIconsArray[i].style.color = "rgb(241, 233, 212)";
             sliderButtonIconsArray[i].style.transform = "scale(1)";
             slidesArray[i].classList.remove('showSlide');
+            setTabindex(slidesArray[i], "-1");
         }
     }
 }
@@ -185,6 +202,14 @@ leftArrow.addEventListener('click', () => {
     checkActiveSlide();
     displaySubmitButton();
 });
+leftArrow.addEventListener('keypress', () => {
+    activeSlide -= 1;
+    const xIndex = Number(activeSlide + "00") / 6;
+    slider.style.transform = `translateX(-${xIndex}%)`;
+    checkArrowsDisplay();
+    checkActiveSlide();
+    displaySubmitButton();
+});
 rightArrow.addEventListener('click', () => {
     activeSlide += 1;
     const xIndex = Number(activeSlide + "00") / 6;
@@ -193,3 +218,17 @@ rightArrow.addEventListener('click', () => {
     checkActiveSlide();
     displaySubmitButton();
 });
+rightArrow.addEventListener('keypress', () => {
+    activeSlide += 1;
+    const xIndex = Number(activeSlide + "00") / 6;
+    slider.style.transform = `translateX(-${xIndex}%)`;
+    checkArrowsDisplay();
+    checkActiveSlide();
+    displaySubmitButton();
+});
+function setTabindex(slide, value) {
+    const tabInputs = slide.querySelectorAll('.tab-input');
+    tabInputs.forEach((input) => {
+        input.setAttribute('tabindex', value);
+    });
+}
