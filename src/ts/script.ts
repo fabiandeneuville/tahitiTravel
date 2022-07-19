@@ -30,6 +30,10 @@ const formSubmitButton = document.querySelector('.send-form-btn') as HTMLDivElem
 
 const activitiesButton = document.querySelectorAll('.activity-button') as NodeListOf<HTMLDivElement>;
 
+/********** CONFIRMATION **********/
+
+const confirmation = document.querySelector('.confirmation') as HTMLDivElement;
+
 // INPUTS 
 const nameInput = document.querySelector('#name') as HTMLInputElement;
 const emailInput = document.querySelector('#email') as HTMLInputElement;
@@ -62,6 +66,16 @@ welcomeMessageButton.addEventListener('keypress', displayForm);
 /********** FORM **********/
 
 form.addEventListener('input', activateSubmitButton);
+
+formSubmitButton.addEventListener('click', () => {
+    form.style.display = "none";
+    confirmation.style.display = "block";
+})
+
+formSubmitButton.addEventListener('keypress', () => {
+    form.style.display = "none";
+    confirmation.style.display = "block";
+})
 
 /********** ACTIVITY BUTTONS ***********/
 

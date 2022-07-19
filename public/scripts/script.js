@@ -19,6 +19,8 @@ const form = document.querySelector('.form');
 const formSlideHeading = document.querySelectorAll('.form-slide-heading');
 const formSubmitButton = document.querySelector('.send-form-btn');
 const activitiesButton = document.querySelectorAll('.activity-button');
+/********** CONFIRMATION **********/
+const confirmation = document.querySelector('.confirmation');
 // INPUTS 
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
@@ -43,6 +45,14 @@ welcomeMessageButton.addEventListener('click', displayForm);
 welcomeMessageButton.addEventListener('keypress', displayForm);
 /********** FORM **********/
 form.addEventListener('input', activateSubmitButton);
+formSubmitButton.addEventListener('click', () => {
+    form.style.display = "none";
+    confirmation.style.display = "block";
+});
+formSubmitButton.addEventListener('keypress', () => {
+    form.style.display = "none";
+    confirmation.style.display = "block";
+});
 /********** ACTIVITY BUTTONS ***********/
 activitiesButton.forEach((button) => {
     button.addEventListener('click', () => {
