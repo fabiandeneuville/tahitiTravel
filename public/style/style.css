@@ -331,7 +331,7 @@ input[type=checkbox]{
 
 footer {
     margin-top: 25px;
-    height: auto;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -345,7 +345,7 @@ footer {
 
 footer p {
     text-align: center;
-    margin-top: auto;
+    margin: 10px auto;
 }
 
 /* FOOTER STYLE EMD* /
