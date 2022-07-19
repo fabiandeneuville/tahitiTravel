@@ -7,14 +7,14 @@ const firstNameRegexp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
 const emailRegexp = /^[a-z0-9.-_]+[@]{1}[a-z0-9.-_]+[.]{1}[a-z]{2,10}$/gi;
 const phoneRegexp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
 /******************** DOM ELEMENTS SELECTION *********************/
-// WELCOME MESSAGE
+/********** WELCOME MESSAGE **********/
 const welcomeMessage = document.querySelector('.welcome-message');
 const welcomeMessageButton = document.querySelector('.welcome-message-button');
-// FORM
+/********** FORM ***********/
 const form = document.querySelector('.form');
 const formSlideHeading = document.querySelectorAll('.form-slide-heading');
 const formSubmitButton = document.querySelector('.send-form-btn');
-// SLIDER
+/********** SLIDER **********/
 const sliderButton = document.querySelectorAll('.slider-button');
 const sliderButtonIcons = document.querySelectorAll('.slider-button i');
 const sliderButtonIconsArray = Array.from(sliderButtonIcons);
@@ -23,10 +23,10 @@ const slider = document.querySelector('.form-slider');
 const leftArrow = document.querySelector('.left');
 const rightArrow = document.querySelector('.right');
 /******************** LISTENERS ********************/
-// WELCOME MESSAGE BUTTON
+/********** WELCOME MESSAGE BUTTON **********/
 welcomeMessageButton.addEventListener('click', displayForm);
 /******************** FUNCTIONS ********************/
-// FORM DISPLAY FUNCTION
+/********** FORM DISPLAY FUNCTION **********/
 function displayForm() {
     welcomeMessage.style.opacity = "0";
     welcomeMessage.style.zIndex = "-1";
@@ -38,7 +38,7 @@ function displayForm() {
     });
 }
 ;
-// FORM SUBMIT HANDLING
+/********** FORM SUBMIT HANDLING **********/
 function displaySubmitButton() {
     if (activeSlide !== 5) {
         formSubmitButton.style.display = "none";
@@ -47,7 +47,7 @@ function displaySubmitButton() {
         formSubmitButton.style.display = "block";
     }
 }
-// FOOTER DATE SETTING FUNCTION
+/********** FOOTER DATE SETTING FUNCTION ***********/
 footerDateSetting();
 function footerDateSetting() {
     const year = document.querySelector('.year');
@@ -55,7 +55,7 @@ function footerDateSetting() {
     const currentYear = currentDate.getFullYear();
     year.textContent = `${currentYear}`;
 }
-// SLIDER HANDLING
+/********** SLIDER HANDLING **********/
 checkActiveSlide();
 checkArrowsDisplay();
 for (let i = 0; i < sliderButtonArray.length; i++) {
