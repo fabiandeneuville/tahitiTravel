@@ -1,6 +1,8 @@
 # estiveTravel
 A dynanic landing page made for a fictional mountain travel specialist.
 
+![logo](https://user-images.githubusercontent.com/94392055/179849300-a93d5250-aabf-4e2d-a555-4aa72c51ae1f.png)
+
 **Stack :** HTML, CSS, JavaScript/TypeScript
 
 Visible [here](https://fabiandeneuville.github.io/estiveTravel/).
