@@ -285,10 +285,6 @@ textarea {
     transition: all 0.3s ease;
 }
 
-.activity-button:hover {
-    background-color: rgb(124,252,0);
-}
-
 .activity-button i {
     margin-right: 5px;
 }
@@ -327,7 +323,6 @@ input[type=checkbox]{
 
 .picked {
     background-color: rgb(124,252,0);
-    border: 2px solid rgb(241, 233, 212);
 }
 
 /* MAIN STYLE END */
