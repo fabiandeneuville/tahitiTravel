@@ -28,6 +28,8 @@ const activitiesButton = document.querySelectorAll('.activity-button') as NodeLi
 
 /********** SLIDER **********/
 
+const slides = document.querySelectorAll('.form-slide') as NodeListOf<HTMLDivElement>;
+const slidesArray : HTMLDivElement[] = Array.from(slides);
 const sliderButton = document.querySelectorAll('.slider-button') as NodeListOf<HTMLDivElement>;
 const sliderButtonIcons = document.querySelectorAll('.slider-button i') as NodeListOf<HTMLParagraphElement>;
 const sliderButtonIconsArray : HTMLParagraphElement[] = Array.from(sliderButtonIcons);
@@ -116,10 +118,12 @@ function checkActiveSlide() : void {
     for(let i = 0; i < sliderButtonIconsArray.length ; i++){
         if(activeSlide === i){
             sliderButtonIconsArray[i].style.color = "rgb(0,250,154)";
-            sliderButtonIconsArray[i].style.transform = "scale(1.7)"
+            sliderButtonIconsArray[i].style.transform = "scale(1.7)";
+            slidesArray[i].classList.add('showSlide');
         } else {
             sliderButtonIconsArray[i].style.color = "rgb(241, 233, 212)";
-            sliderButtonIconsArray[i].style.transform = "scale(1)"
+            sliderButtonIconsArray[i].style.transform = "scale(1)";
+            slidesArray[i].classList.remove('showSlide');
         }
     }
 }

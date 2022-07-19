@@ -17,6 +17,8 @@ const formSlideHeading = document.querySelectorAll('.form-slide-heading');
 const formSubmitButton = document.querySelector('.send-form-btn');
 const activitiesButton = document.querySelectorAll('.activity-button');
 /********** SLIDER **********/
+const slides = document.querySelectorAll('.form-slide');
+const slidesArray = Array.from(slides);
 const sliderButton = document.querySelectorAll('.slider-button');
 const sliderButtonIcons = document.querySelectorAll('.slider-button i');
 const sliderButtonIconsArray = Array.from(sliderButtonIcons);
@@ -93,10 +95,12 @@ function checkActiveSlide() {
         if (activeSlide === i) {
             sliderButtonIconsArray[i].style.color = "rgb(0,250,154)";
             sliderButtonIconsArray[i].style.transform = "scale(1.7)";
+            slidesArray[i].classList.add('showSlide');
         }
         else {
             sliderButtonIconsArray[i].style.color = "rgb(241, 233, 212)";
             sliderButtonIconsArray[i].style.transform = "scale(1)";
+            slidesArray[i].classList.remove('showSlide');
         }
     }
 }

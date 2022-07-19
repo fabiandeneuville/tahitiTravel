@@ -133,6 +133,15 @@ main {
     overflow-x: hidden;
 }
 
+.form-slide {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.showSlide {
+    opacity: 1;
+}
+
 .form-slides-btn-container {
     width: 100%;
     display: flex;
