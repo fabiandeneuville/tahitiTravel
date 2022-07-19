@@ -26,6 +26,16 @@ const formSubmitButton = document.querySelector('.send-form-btn') as HTMLDivElem
 
 const activitiesButton = document.querySelectorAll('.activity-button') as NodeListOf<HTMLDivElement>;
 
+// INPUTS 
+const nameInput = document.querySelector('#name') as HTMLInputElement;
+const emailInput = document.querySelector('#email') as HTMLInputElement;
+const phoneInput = document.querySelector('#phone') as HTMLInputElement;
+
+// ERROR MESSAGES
+const nameError = document.querySelector('.name-error-message') as HTMLParagraphElement;
+const emailError = document.querySelector('.email-error-message') as HTMLParagraphElement;
+const phoneError = document.querySelector('.phone-error-message') as HTMLParagraphElement;
+
 /********** SLIDER **********/
 
 const slides = document.querySelectorAll('.form-slide') as NodeListOf<HTMLDivElement>;
@@ -78,9 +88,35 @@ function displayForm() : void {
     });
 };
 
+/********** FORM INPUTS VALIDATION **********/
+
+nameInput.addEventListener('change', () => {
+    if(nameRegexp.test(nameInput.value)){
+        nameError.innerText = "";
+    } else if (!nameRegexp.test(nameInput.value)){
+        nameError.innerText = "Saisie invalide !";
+    }
+})
+
+emailInput.addEventListener('change', () => {
+    if(emailRegexp.test(emailInput.value)){
+        emailError.innerText = "";
+    } else if (!emailRegexp.test(emailInput.value)){
+        emailError.innerText = "Saisie invalide !";
+    }
+})
+
+phoneInput.addEventListener('change', () => {
+    if(phoneRegexp.test(phoneInput.value)){
+        phoneError.innerText = "";
+    } else if (!phoneRegexp.test(phoneInput.value)){
+        phoneError.innerText = "Saisie invalide !";
+    }
+})
+
 /********** FORM SUBMIT HANDLING **********/
 
-function displaySubmitButton(){
+function displaySubmitButton() : void {
     if(activeSlide !== 5){
         formSubmitButton.style.display = "none";
     } else {

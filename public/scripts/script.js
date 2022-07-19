@@ -16,6 +16,14 @@ const form = document.querySelector('.form');
 const formSlideHeading = document.querySelectorAll('.form-slide-heading');
 const formSubmitButton = document.querySelector('.send-form-btn');
 const activitiesButton = document.querySelectorAll('.activity-button');
+// INPUTS 
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const phoneInput = document.querySelector('#phone');
+// ERROR MESSAGES
+const nameError = document.querySelector('.name-error-message');
+const emailError = document.querySelector('.email-error-message');
+const phoneError = document.querySelector('.phone-error-message');
 /********** SLIDER **********/
 const slides = document.querySelectorAll('.form-slide');
 const slidesArray = Array.from(slides);
@@ -60,6 +68,31 @@ function displayForm() {
     });
 }
 ;
+/********** FORM INPUTS VALIDATION **********/
+nameInput.addEventListener('change', () => {
+    if (nameRegexp.test(nameInput.value)) {
+        nameError.innerText = "";
+    }
+    else if (!nameRegexp.test(nameInput.value)) {
+        nameError.innerText = "Saisie invalide !";
+    }
+});
+emailInput.addEventListener('change', () => {
+    if (emailRegexp.test(emailInput.value)) {
+        emailError.innerText = "";
+    }
+    else if (!emailRegexp.test(emailInput.value)) {
+        emailError.innerText = "Saisie invalide !";
+    }
+});
+phoneInput.addEventListener('change', () => {
+    if (phoneRegexp.test(phoneInput.value)) {
+        phoneError.innerText = "";
+    }
+    else if (!phoneRegexp.test(phoneInput.value)) {
+        phoneError.innerText = "Saisie invalide !";
+    }
+});
 /********** FORM SUBMIT HANDLING **********/
 function displaySubmitButton() {
     if (activeSlide !== 5) {
