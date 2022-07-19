@@ -325,6 +325,11 @@ input[type=checkbox]{
     display: none;
 }
 
+.picked {
+    background-color: rgb(124,252,0);
+    border: 2px solid rgb(241, 233, 212);
+}
+
 /* MAIN STYLE END */
 
 /* FOOTER STYLE START*/

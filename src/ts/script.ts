@@ -2,6 +2,8 @@
 
 let activeSlide : number = 0;
 
+const pickedActivities : string[] = [];
+
 /******************** REGEXP ********************/
 
 const nameRegexp : RegExp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
@@ -22,6 +24,8 @@ const form = document.querySelector('.form') as HTMLFormElement;
 const formSlideHeading = document.querySelectorAll('.form-slide-heading') as NodeListOf<HTMLHeadingElement>;
 const formSubmitButton = document.querySelector('.send-form-btn') as HTMLDivElement;
 
+const activitiesButton = document.querySelectorAll('.activity-button') as NodeListOf<HTMLDivElement>;
+
 /********** SLIDER **********/
 
 const sliderButton = document.querySelectorAll('.slider-button') as NodeListOf<HTMLDivElement>;
@@ -36,7 +40,26 @@ const rightArrow = document.querySelector('.right') as HTMLDivElement;
 
 /********** WELCOME MESSAGE BUTTON **********/ 
 
-welcomeMessageButton.addEventListener('click', displayForm)
+welcomeMessageButton.addEventListener('click', displayForm);
+
+/********** ACTIVITY BUTTONS ***********/
+
+activitiesButton.forEach((button : HTMLDivElement) => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('picked');
+        if(pickedActivities.includes(button.dataset.name as string)){
+            for(let i = 0 ; i < pickedActivities.length ; i++){
+                if(pickedActivities[i] === button.dataset.name){
+                    pickedActivities.splice(i, 1);
+                }
+            }
+            console.log(pickedActivities)
+        } else {
+            pickedActivities.push(button.dataset.name as string)
+            console.log(pickedActivities)
+        }
+    })
+});
 
 /******************** FUNCTIONS ********************/ 
 

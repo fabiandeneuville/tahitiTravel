@@ -1,6 +1,7 @@
 "use strict";
 /******************** GLOBAL VARIABLES ********************/
 let activeSlide = 0;
+const pickedActivities = [];
 /******************** REGEXP ********************/
 const nameRegexp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
 const firstNameRegexp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
@@ -14,6 +15,7 @@ const welcomeMessageButton = document.querySelector('.welcome-message-button');
 const form = document.querySelector('.form');
 const formSlideHeading = document.querySelectorAll('.form-slide-heading');
 const formSubmitButton = document.querySelector('.send-form-btn');
+const activitiesButton = document.querySelectorAll('.activity-button');
 /********** SLIDER **********/
 const sliderButton = document.querySelectorAll('.slider-button');
 const sliderButtonIcons = document.querySelectorAll('.slider-button i');
@@ -25,6 +27,24 @@ const rightArrow = document.querySelector('.right');
 /******************** LISTENERS ********************/
 /********** WELCOME MESSAGE BUTTON **********/
 welcomeMessageButton.addEventListener('click', displayForm);
+/********** ACTIVITY BUTTONS ***********/
+activitiesButton.forEach((button) => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('picked');
+        if (pickedActivities.includes(button.dataset.name)) {
+            for (let i = 0; i < pickedActivities.length; i++) {
+                if (pickedActivities[i] === button.dataset.name) {
+                    pickedActivities.splice(i, 1);
+                }
+            }
+            console.log(pickedActivities);
+        }
+        else {
+            pickedActivities.push(button.dataset.name);
+            console.log(pickedActivities);
+        }
+    });
+});
 /******************** FUNCTIONS ********************/
 /********** FORM DISPLAY FUNCTION **********/
 function displayForm() {
