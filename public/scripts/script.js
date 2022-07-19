@@ -2,6 +2,9 @@
 /******************** GLOBAL VARIABLES ********************/
 let activeSlide = 0;
 const pickedActivities = [];
+let nameIsValide = false;
+let emailIsValide = false;
+let phoneIsValide = false;
 /******************** REGEXP ********************/
 const nameRegexp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
 const firstNameRegexp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
@@ -37,6 +40,8 @@ const rightArrow = document.querySelector('.right');
 /******************** LISTENERS ********************/
 /********** WELCOME MESSAGE BUTTON **********/
 welcomeMessageButton.addEventListener('click', displayForm);
+/********** FORM **********/
+form.addEventListener('input', activateSubmitButton);
 /********** ACTIVITY BUTTONS ***********/
 activitiesButton.forEach((button) => {
     button.addEventListener('click', () => {
@@ -47,11 +52,9 @@ activitiesButton.forEach((button) => {
                     pickedActivities.splice(i, 1);
                 }
             }
-            console.log(pickedActivities);
         }
         else {
             pickedActivities.push(button.dataset.name);
-            console.log(pickedActivities);
         }
     });
 });
@@ -69,31 +72,45 @@ function displayForm() {
 }
 ;
 /********** FORM INPUTS VALIDATION **********/
-nameInput.addEventListener('change', () => {
+nameInput.addEventListener('input', () => {
     if (nameRegexp.test(nameInput.value)) {
         nameError.innerText = "";
+        nameIsValide = true;
     }
     else if (!nameRegexp.test(nameInput.value)) {
         nameError.innerText = "Saisie invalide !";
+        nameIsValide = false;
     }
 });
-emailInput.addEventListener('change', () => {
+emailInput.addEventListener('input', () => {
     if (emailRegexp.test(emailInput.value)) {
         emailError.innerText = "";
+        emailIsValide = true;
     }
     else if (!emailRegexp.test(emailInput.value)) {
         emailError.innerText = "Saisie invalide !";
+        emailIsValide = false;
     }
 });
-phoneInput.addEventListener('change', () => {
+phoneInput.addEventListener('input', () => {
     if (phoneRegexp.test(phoneInput.value)) {
         phoneError.innerText = "";
+        phoneIsValide = true;
     }
     else if (!phoneRegexp.test(phoneInput.value)) {
         phoneError.innerText = "Saisie invalide !";
+        phoneIsValide = false;
     }
 });
 /********** FORM SUBMIT HANDLING **********/
+function activateSubmitButton() {
+    if (nameIsValide && emailIsValide && phoneIsValide) {
+        formSubmitButton.classList.add('show-send-form-btn');
+    }
+    else if (!nameIsValide || !emailIsValide || !phoneIsValide) {
+        formSubmitButton.classList.remove('show-send-form-btn');
+    }
+}
 function displaySubmitButton() {
     if (activeSlide !== 5) {
         formSubmitButton.style.display = "none";

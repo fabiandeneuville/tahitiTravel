@@ -4,6 +4,10 @@ let activeSlide : number = 0;
 
 const pickedActivities : string[] = [];
 
+let nameIsValide : boolean = false;
+let emailIsValide : boolean = false;
+let phoneIsValide : boolean = false;
+
 /******************** REGEXP ********************/
 
 const nameRegexp : RegExp = /^[a-zéèôöîïûùü' -]{2,50}$/gi;
@@ -54,6 +58,10 @@ const rightArrow = document.querySelector('.right') as HTMLDivElement;
 
 welcomeMessageButton.addEventListener('click', displayForm);
 
+/********** FORM **********/
+
+form.addEventListener('input', activateSubmitButton);
+
 /********** ACTIVITY BUTTONS ***********/
 
 activitiesButton.forEach((button : HTMLDivElement) => {
@@ -65,10 +73,8 @@ activitiesButton.forEach((button : HTMLDivElement) => {
                     pickedActivities.splice(i, 1);
                 }
             }
-            console.log(pickedActivities)
         } else {
             pickedActivities.push(button.dataset.name as string)
-            console.log(pickedActivities)
         }
     })
 });
@@ -90,31 +96,45 @@ function displayForm() : void {
 
 /********** FORM INPUTS VALIDATION **********/
 
-nameInput.addEventListener('change', () => {
+nameInput.addEventListener('input', () => {
     if(nameRegexp.test(nameInput.value)){
         nameError.innerText = "";
+        nameIsValide = true;
     } else if (!nameRegexp.test(nameInput.value)){
         nameError.innerText = "Saisie invalide !";
+        nameIsValide = false;
     }
 })
 
-emailInput.addEventListener('change', () => {
+emailInput.addEventListener('input', () => {
     if(emailRegexp.test(emailInput.value)){
         emailError.innerText = "";
+        emailIsValide = true;
     } else if (!emailRegexp.test(emailInput.value)){
         emailError.innerText = "Saisie invalide !";
+        emailIsValide = false;
     }
 })
 
-phoneInput.addEventListener('change', () => {
+phoneInput.addEventListener('input', () => {
     if(phoneRegexp.test(phoneInput.value)){
         phoneError.innerText = "";
+        phoneIsValide = true;
     } else if (!phoneRegexp.test(phoneInput.value)){
         phoneError.innerText = "Saisie invalide !";
+        phoneIsValide = false;
     }
 })
 
 /********** FORM SUBMIT HANDLING **********/
+
+function activateSubmitButton(){
+    if(nameIsValide && emailIsValide && phoneIsValide){
+        formSubmitButton.classList.add('show-send-form-btn');
+    } else if (!nameIsValide || !emailIsValide || !phoneIsValide){
+        formSubmitButton.classList.remove('show-send-form-btn');
+    }
+}
 
 function displaySubmitButton() : void {
     if(activeSlide !== 5){

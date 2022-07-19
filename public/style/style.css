@@ -313,7 +313,6 @@ input[type=checkbox]{
 .show-send-form-btn {
     opacity: 1;
     cursor: pointer;
-    transform: scale(1.2);
     color: rgb(0,250,154);
 }
 
