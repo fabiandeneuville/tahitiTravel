@@ -91,7 +91,7 @@ for (let i = 0; i < sliderButtonArray.length; i++) {
 function checkActiveSlide() {
     for (let i = 0; i < sliderButtonIconsArray.length; i++) {
         if (activeSlide === i) {
-            sliderButtonIconsArray[i].style.color = "rgb(124,252,0)";
+            sliderButtonIconsArray[i].style.color = "rgb(0,250,154)";
             sliderButtonIconsArray[i].style.transform = "scale(1.7)";
         }
         else {
