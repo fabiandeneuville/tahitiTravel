@@ -236,11 +236,11 @@ main {
     font-size: 20px;
 }
 
-.input-block {
+.input-bloc {
     display: flex;
     background-color: rgba(255,255,255,0.7);
     margin-bottom: 10px;
-    padding: 15px;
+    padding: 12px;
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
@@ -249,10 +249,14 @@ main {
 }
 
 @media screen and (max-width:750px) {
-    .input-block {
+    .input-bloc {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .info-input {
+        width: 100%;
     }
 
     label {
@@ -268,27 +272,27 @@ label.info-label {
     width: 95px;
 }
 
-input.info-input {
+.info-input {
     width: calc(100% - 95px);
     padding: 3px 10px;
 }
 
 input {
     border: 2px solid rgb(116,191,229);
-    border-radius: 50px;
+    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.7);
     color: black;
     padding: 3px 10px;
 }
 
-.input-block-text {
+.input-bloc-text {
     margin-top: 10px;
     padding: 5px;
     font-size: 12px;
 }
 
 select {
-    border-radius: 50px;
+    border-radius: 5px;
     border: 2px solid rgb(116,191,229);
     width: 180px;
     height: 30px;
@@ -314,6 +318,21 @@ textarea {
     resize: vertical;
 }
 
+@media screen and (max-width:750px){
+
+    input:not(.info-input), select {
+        transform: scale(1.3);
+    }
+    label {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .info-input {
+        width: 100%;
+        transform: scaleY(1.3);
+    }
+}
+
 .activity-buttons-container {
     display: flex;
     flex-wrap: wrap;
@@ -329,7 +348,7 @@ textarea {
     justify-content: center;
     border: 2px solid rgb(116,191,229);
     border-radius: 50px;
-    background-color: rgb(241, 233, 212);
+    background-color: rgb(255,255,255);
     cursor: pointer;
     margin: 5px;
     transition: all 0.3s ease;
