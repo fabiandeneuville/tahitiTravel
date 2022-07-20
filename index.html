@@ -9,18 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Estive Travel - Landing Page</title>
+    <title>Tahiti Voyages - Le spécialiste du voyage en Polynésie</title>
 </head>
 <body>
     <!--BACKGROUND IMAGE START-->
-    <img class="background-image" src="./assets/images/montagne.jpeg" alt="">
+    <img class="background-image" src="./assets/images/tahiti.jpeg" alt="">
     <!--BACKGROUND IMAGE END-->
     <!--HEADER START-->
     <header>
         <!--LOGO START-->
         <a href="index.html">
             <div class="logo-container">
-                <img src="./assets/logos/logo_transparent_paysage.png" alt="">
+                <img src="./assets/logos/tahiti-voyages.transparent.png" alt="">
             </div>
         </a>
         <!--LOGO END-->
@@ -33,7 +33,7 @@
             <!--WELCOME MESSAGE START-->
             <div class="welcome-message">
 
-                <h1 class="welcome-message-heading">Estives Travel, votre spécialiste du trek dans les Alpes</h1>
+                <h1 class="welcome-message-heading">Tahiti Voyages, le spécialiste du voyage en Polynésie</h1>
 
                 <p class="welcome-message-text">Le massif des <b>Alpes</b> offre un terrain de jeu de choix pour tous les amateurs de <b>randonnée en montagne</b>. <br><br>Les équipes d’<b>Estives Travel</b> sont composées d’anciens guides de haute montagne, de randonneurs chevronnés et d’amoureux de cette belle région. Leurs connaissances du terrain et des nombreuses possibilités offertes aux voyageurs en termes de parcours, d’activités et d’hébergement leur permettent de <b>concevoir LE parcours de trek</b> qui répondra à vos attentes.<br><br>Faites-leur part de votre projet en renseignant ce formulaire. L’un d’eux prendra contact avec vous <b>sous 48h </b>avec plusieurs propositions et vous pourrez ensemble définir plus précisément votre idée d’un trek réussi et concevoir votre parcours.</p>
 
@@ -51,16 +51,16 @@
                         <i class="fa-solid fa-people-group"></i>
                     </div>
                     <div class="slider-button" tabindex="0" role="button">
-                        <i class="fa-solid fa-bed"></i>
+                        <i class="fa-solid fa-hotel"></i>
                     </div>
                     <div class="slider-button" tabindex="0" role="button">
-                        <i class="fa-solid fa-train"></i>
+                        <i class="fa-solid fa-plane-up"></i>
                     </div>
                     <div class="slider-button" tabindex="0" role="button">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
                     <div class="slider-button" tabindex="0" role="button">
-                        <i class="fa-solid fa-person-biking"></i>
+                        <i class="fa-solid fa-umbrella-beach"></i>
                     </div>
                     <div class="slider-button" tabindex="0" role="button">
                         <i class="fa-solid fa-info"></i>
@@ -71,27 +71,48 @@
                 <div class="form-slider">
                     <!--1 SLIDE START-->
                     <div class="form-slide">
-                        <h2 class="form-slide-heading">Les voyageurs</h2>
-                        <p class="form-slide-intro">Nous avons besoin de connaître la structure de votre groupe ainsi que son niveau pour définir un programme.</p>
-                        <div class="input-block">
+                        <h2 class="form-slide-heading">Le voyage</h2>
+                        <p class="form-slide-intro">Nous avons besoin de connaître le nombre de participants ainsi que vos dates de voyage.</p>
+                        <div class="input-block number-input-block">
                             <label for="adults">Adultes</label>
                             <input class="tab-input" id="adults" type="number" value="1" min="1" max="10">
                         </div>
-                        <div class="input-block">
+                        <div class="input-block number-input-block">
                             <label for="kids">Enfants (- 12 ans)</label>
                             <input class="tab-input" id="kids" type="number" value="0" min="0" max="10">
                         </div>
                         <div class="input-block">
-                            <label for="animals">Des animaux ?</label>
-                            <input class="tab-input" id="animals" type="number" value="0" min="0" max="10">
+                            <label for="type-input">Quel mode de voyage envisagez-vous ?  </label>
+                            <select class="tab-input" name="type-input" id="type-input">
+                                <option value="sejour">Séjour</option>
+                                <option value="combine">Combiné d'îles</option>
+                                <option value="croisiere">Croisière</option>
+                            </select>
                         </div>
-                        <div class="level-input-block input-block">
-                            <label for="level-input">Votre niveau : </label>
-                            <select class="tab-input" name="level-input" id="level-input">
-                                <option value="beginner">Débutant</option>
-                                <option value="intermediate">Intermédiaire</option>
-                                <option value="experienced">Confirmé</option>
-                                <option value="sportive">Sportif</option>
+                        <div class="input-block">
+                            <label for="motive-input">Une occasion particulière pour ce voyage ?  </label>
+                            <select class="tab-input" name="motive-input" id="motive-input">
+                                <option value="voyage-de-noces">Voyage de Noces</option>
+                                <option value="anniversaire">Anniversaire de mariage</option>
+                                <option value="famille">Voyage en famille</option>
+                                <option value="autre-motif">Autre</option>
+                            </select>
+                        </div>
+                        <div class="input-block date-input-block">
+                            <label for="departure-input">Date de départ</label>
+                            <input type="date" name="departure-input" id="departure-input">
+                        </div>
+                        <div class="input-block date-input-block">
+                            <label for="return-input">Date de retour</label>
+                            <input type="date" name="return-input" id="return-input">
+                        </div>
+                        <div class="input-block">
+                            <label for="motive-input">Une idée de budget pour ce voyage ( par personne ) ?  </label>
+                            <select class="tab-input" name="motive-input" id="motive-input">
+                                <option value="voyage-de-noces">Le budget n'est pas défini</option>
+                                <option value="anniversaire">1500€ à 2000€</option>
+                                <option value="famille">2000€ à 3500€</option>
+                                <option value="autre-motif">3500€ et plus</option>
                             </select>
                         </div>
                     </div>
@@ -99,14 +120,25 @@
                     <!--2 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">L'hébergement</h2>
-                        <p class="form-slide-intro">Avez-vous déjà une idée du mode d'hébergement souhaité ?.</p>
+                        <p class="form-slide-intro">Avez-vous déjà une idée du mode d'hébergement souhaité ?</p>
+                        <div class="input-block">
+                            <label for="classification">Classification : </label>
+                            <select class="tab-input" name="classification" id="classification">
+                                <option value="no-stars">Pension de famille - Faré</option>
+                                <option value="3-étoiles">3 étoiles</option>
+                                <option value="4-étoiles">4 étoiles</option>
+                                <option value="5-étoiles">5 étoiles</option>
+                                <option value="Luxe">Luxe</option>
+                            </select>
+                        </div>
                         <div class="input-block">
                             <label for="hotels">Votre hébergement : </label>
                             <select class="tab-input" name="hotels" id="hotels">
-                                <option value="Camping">Camping</option>
-                                <option value="Petite hôtellerie familiale">Petite hôtellerie familiale</option>
-                                <option value="Gîtes et locations">Gîtes et locations</option>
-                                <option value="Camping-car">Camping-car</option>
+                                <option value="pension">Appartement familial</option>
+                                <option value="superior-room">Chambre supérieure</option>
+                                <option value="suite">Suite</option>
+                                <option value="beach-bungalow">Bungalow plage</option>
+                                <option value="overwater-bungalow">Bungalow sur pilotis</option>
                             </select>
                         </div>
                         <div class="input-block">
@@ -118,14 +150,20 @@
                     <!--3 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Le transport</h2>
-                        <p class="form-slide-intro">Par soucis écologique, nous ne proposons pas de vols depuis la France à destinations des Alpes.</p>
+                        <p class="form-slide-intro">Que prévoyez-vous pour les vols ?</p>
                         <div class="input-block">
-                            <label for="transport">Votre mode de transport : </label>
-                            <select class="tab-input" name="transport" id="transport">
-                                <option value="Véhicule personnel">Véhicule personnel</option>
-                                <option value="Train + Véhicule de location">Train + Véhicule de location</option>
-                                <option value="Train + transferts privatifs">Train + transferts privatifs</option>
-                                <option value="Train + Camping-car">Train + Camping-car</option>
+                            <label for="flight">Inclure les vols ? </label>
+                            <select class="tab-input" name="flight" id="flight">
+                                <option value="include-flight-yes">OUI</option>
+                                <option value="include-flight-no">NON</option>
+                            </select>
+                        </div>
+                        <div class="input-block">
+                            <label for="flight-class">Classe du vol : </label>
+                            <select class="tab-input" name="flight-class" id="flight-class">
+                                <option value="eco">Classe économique</option>
+                                <option value="business">Classe business</option>
+                                <option value="premiere">Première classe</option>
                             </select>
                         </div>
                         <div class="input-block">
@@ -144,9 +182,9 @@
                                 <option value="Sans repas">Sans repas</option>
                                 <option value="Petit déjeuner">Petit déjeuner</option>
                                 <option value="Demi pension">Demi pension</option>
-                                <option value="Pension complète">Pension complète *</option>
+                                <option value="Pension complète">Pension complète</option>
+                                <option value="Pension complète">All Inclusive</option>
                             </select>
-                            <p class="input-block-text">* Selon le choix d'hébergement et de parcours, le repas de midi pourra se présenter sous la forme d'un panier repas, distribué le matin, au départ.</p>
                         </div>
                         <div class="input-block">
                             <label for="meal-comment">N'hésitez pas à nous faire part de souhaits ou d'informations complémentaires :</label>
@@ -157,27 +195,35 @@
                     <!--5 SLIDE START-->
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Les activités</h2>
-                        <p class="form-slide-intro">Quelles activités souhaiteriez-vous pratiquer en plus de la randonnée ?</p>
+                        <p class="form-slide-intro">Quelles activités souhaiteriez-vous pratiquer ?</p>
                         <div class="activity-buttons-container">
-                            <div class="activity-button tab-input" data-name="Équitation">
-                                <i class="fa-solid fa-horse"></i>
-                                <span>Équitation</span>
+                            <div class="activity-button tab-input" data-name="Farniente">
+                                <img class="activity-icon" src="./assets/icons/beach-chair.png" alt="">
+                                <span>Farniente</span>
                             </div>
                             <div class="activity-button tab-input" data-name="VTT">
                                 <i class="fa-solid fa-bicycle"></i>
                                 <span>VTT</span>
                             </div>
-                            <div class="activity-button tab-input" data-name="Ski d'été">
-                                <i class="fa-solid fa-person-skiing-nordic"></i>
-                                <span>Ski d'été</span>
+                            <div class="activity-button tab-input" data-name="Spa">
+                                <i class="fa-solid fa-spa"></i>
+                                <span>Spa</span>
                             </div>
-                            <div class="activity-button tab-input" data-name="Sports d'eau">
-                                <i class="fa-solid fa-person-swimming"></i>
-                                <span>Sports d'eau</span>
+                            <div class="activity-button tab-input" data-name="Plongée">
+                                <img class="activity-icon" src="./assets/icons/diver.png" alt="">
+                                <span>Plongée</span>
                             </div>
-                            <div class="activity-button tab-input" data-name="Pêche">
-                                <i class="fa-solid fa-fish"></i>
-                                <span>Pêche</span>
+                            <div class="activity-button tab-input" data-name="Surf">
+                                <img class="activity-icon" src="./assets/icons/surfing.png" alt="">
+                                <span>Surf</span>
+                            </div>
+                            <div class="activity-button tab-input" data-name="Croisière">
+                                <img class="activity-icon" src="./assets/icons/catamaran.png" alt="">
+                                <span>Croisière</span>
+                            </div>
+                            <div class="activity-button tab-input" data-name="Découverte">
+                                <img class="activity-icon" src="./assets/icons/decouverte.png" alt="">
+                                <span>Découverte</span>
                             </div>
                             <div class="activity-button tab-input" data-name="Autres">
                                 <i class="fa-solid fa-volleyball"></i>
@@ -194,17 +240,17 @@
                     <div class="form-slide">
                         <h2 class="form-slide-heading">Vos informations</h2>
                         <p class="form-slide-intro">De manière à permettre à l'un de nos spécialistes de vous recontacter, nous avons besoin de quelques informations supplémentaires.</p>
-                        <div class="input-block">
+                        <div class="input-block info-input-block">
                             <label class="info-label" for="name">Nom *</label>
                             <input class="info-input tab-input" id="name" type="text" required>
                             <p class="error-message name-error-message"></p>
                         </div>
-                        <div class="input-block">
+                        <div class="input-block info-input-block">
                             <label class="info-label" for="email">Email *</label>
                             <input class="info-input tab-input" id="email" type="email" required>
                             <p class="error-message email-error-message"></p>
                         </div>
-                        <div class="input-block">
+                        <div class="input-block info-input-block">
                             <label class="info-label" for="phone">Telephone *</label>
                             <input class="info-input tab-input" id="phone" type="text" required>
                             <p class="error-message phone-error-message"></p>

@@ -177,7 +177,7 @@ for (let i = 0; i < sliderButtonArray.length; i++) {
 function checkActiveSlide() {
     for (let i = 0; i < sliderButtonIconsArray.length; i++) {
         if (activeSlide === i) {
-            sliderButtonIconsArray[i].style.color = "rgb(0,250,154)";
+            sliderButtonIconsArray[i].style.color = "rgb(116,191,229)";
             sliderButtonIconsArray[i].style.transform = "scale(1.7)";
             slidesArray[i].classList.add('showSlide');
             setTabindex(slidesArray[i], "0");
