@@ -6,7 +6,7 @@ A dynanic landing page made for a fictional Tahiti travel specialist.
 
 **Stack :** HTML, CSS, JavaScript/TypeScript
 
-Visible [here](https://fabiandeneuville.github.io/tahitiTravel/).
+Visible [here](https://fabiandeneuville.github.io/tahitiVoyages/).
 
 **WAVE Accessibility evaluation :**
 
