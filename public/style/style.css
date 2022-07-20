@@ -87,7 +87,7 @@ main {
 }
 
 .welcome-message-text  {
-    text-align: left;
+    text-align: justify;
     margin: 10px 0;
     background-color: rgba(255,255,255,0.7);
     padding: 25px;
@@ -238,7 +238,7 @@ main {
 
 .input-bloc {
     display: flex;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.75);
     margin-bottom: 10px;
     padding: 12px;
     width: 100%;
@@ -329,7 +329,7 @@ textarea {
     }
     .info-input {
         width: 100%;
-        transform: scaleY(1.3);
+        height: 40px;
     }
 }
 
@@ -419,7 +419,7 @@ textarea {
 }
 
 .confirmation-text  {
-    text-align: left;
+    text-align: justify;
     margin: 10px 0;
     background-color: rgba(241, 233, 212, 0.7);
     padding: 25px;
@@ -446,13 +446,16 @@ footer {
     align-items: center;
     color: black;
     padding: 25px;
-    background-color: rgb(116,191,229, 0.85);
-    border-top: 5px solid rgb(116,191,229);
+    background-color: rgb(116,191,229, 0.60);
 }
 
 footer p {
     text-align: center;
     margin: 10px auto;
+}
+
+.copyright {
+    font-weight: 600;
 }
 
 /* FOOTER STYLE EMD* /
