@@ -1,5 +1,5 @@
 # tahitiTravel
-A dynanic landing page made for a fictional Tahiti travel specialist.
+A dyna,ic landing page made for a fictional Tahiti travel specialist.
 
 ![banner](https://user-images.githubusercontent.com/94392055/180230600-1ca21814-ebb6-4a35-ba39-0c2d372e06a6.png)
 
