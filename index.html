@@ -14,14 +14,22 @@
 </head>
 <body>
     <!--BACKGROUND IMAGE START-->
-    <img class="background-image" src="./assets/images/tahiti.jpeg" alt="Photo d'arriére plan montrant un lagon de Polynésie">
+    <picture>
+        <source srcset="./assets/images/tahiti.webp" type="image/webp">
+        <source srcset="./assets/images/tahiti.jpeg" type="image/jpeg">
+        <img class="background-image" src="./assets/images/tahiti.jpeg" alt="Photo d'arriére plan montrant un lagon de Polynésie">
+    </picture>
     <!--BACKGROUND IMAGE END-->
     <!--HEADER START-->
     <header>
         <!--LOGO START-->
         <a href="index.html">
             <div class="logo-container">
-                <img src="./assets/logos/tahiti-voyages.transparent.png" alt="Logo de l'entreprise fictive Tahiti Voyages">
+                <picture>
+                    <source srcset="./assets/logos/tahiti-voyages.transparent.webp" type="image/webp">
+                    <source srcset="./assets/logos/tahiti-voyages.transparent.png" type="image/png">
+                    <img src="./assets/logos/tahiti-voyages.transparent.png" alt="Logo de l'entreprise fictive Tahiti Voyages">
+                </picture>
             </div>
         </a>
         <!--LOGO END-->
