@@ -15,9 +15,9 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
     background-color: rgb(116,191,229, 0.7);
-    border-bottom: 5px solid rgb(116,191,229);
+    border-bottom: 10px solid rgb(116,191,229);
 }
 
 .logo-container {
@@ -84,6 +84,7 @@ main {
 }
 .welcome-message-heading {
     color:  rgb(241, 233, 212);
+    text-align: center;
 }
 
 .welcome-message-text  {
@@ -208,7 +209,7 @@ main {
     width: 100%;
     text-align: center;
     color: black;
-    background-color: rgb(116,191,229, 0.90);
+    background-color: rgb(116,191,229);
     padding: 5px 15px;
     display:block;
     opacity: 0;
@@ -228,7 +229,7 @@ main {
 
 .form-slide-intro {
     color: black;
-    background-color: rgb(116,191,229, 0.90);
+    background-color: rgba(116,191,229, 0.85);
     margin-bottom: 10px;
     padding: 5px 15px;
     line-height: 25px;
