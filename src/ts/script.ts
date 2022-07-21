@@ -38,6 +38,7 @@ const confirmation = document.querySelector('.confirmation') as HTMLDivElement;
 const nameInput = document.querySelector('#name') as HTMLInputElement;
 const emailInput = document.querySelector('#email') as HTMLInputElement;
 const phoneInput = document.querySelector('#phone') as HTMLInputElement;
+const numberInput : HTMLInputElement[] = Array.from(document.querySelectorAll('.number-input') as NodeListOf<HTMLInputElement>)
 
 // ERROR MESSAGES
 const nameError = document.querySelector('.name-error-message') as HTMLParagraphElement;
@@ -122,6 +123,18 @@ function displayForm() : void {
 };
 
 /********** FORM INPUTS VALIDATION **********/
+
+numberInput.forEach((input : HTMLInputElement) => {
+    input.addEventListener('change', () => {
+        let value : number = parseInt(input.value);
+        if(value < 0){
+            input.value = "0"
+            input.style.border = "2px solid crimson";
+        } else {
+            input.style.border = "2px solid rgb(116,191,229)";
+        }
+    })
+})
 
 nameInput.addEventListener('input', () => {
     if(nameRegexp.test(nameInput.value)){

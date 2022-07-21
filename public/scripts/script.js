@@ -25,6 +25,7 @@ const confirmation = document.querySelector('.confirmation');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const phoneInput = document.querySelector('#phone');
+const numberInput = Array.from(document.querySelectorAll('.number-input'));
 // ERROR MESSAGES
 const nameError = document.querySelector('.name-error-message');
 const emailError = document.querySelector('.email-error-message');
@@ -96,6 +97,18 @@ function displayForm() {
 }
 ;
 /********** FORM INPUTS VALIDATION **********/
+numberInput.forEach((input) => {
+    input.addEventListener('change', () => {
+        let value = parseInt(input.value);
+        if (value < 0) {
+            input.value = "0";
+            input.style.border = "2px solid crimson";
+        }
+        else {
+            input.style.border = "2px solid rgb(116,191,229)";
+        }
+    });
+});
 nameInput.addEventListener('input', () => {
     if (nameRegexp.test(nameInput.value)) {
         nameError.innerText = "";
