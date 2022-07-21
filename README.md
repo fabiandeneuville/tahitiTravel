@@ -1,8 +1,7 @@
 # tahitiTravel
 A dynanic landing page made for a fictional Tahiti travel specialist.
 
-![tahiti-voyages](https://user-images.githubusercontent.com/94392055/180058257-dc964485-a86a-46a6-8f7f-0986b7ce90ad.png)
-
+![banner](https://user-images.githubusercontent.com/94392055/180230600-1ca21814-ebb6-4a35-ba39-0c2d372e06a6.png)
 
 **Stack :** HTML, CSS, JavaScript/TypeScript
 
